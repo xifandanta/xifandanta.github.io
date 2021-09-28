@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>pluto 小站</title>
+  
+  <subtitle>Charo</subtitle>
+  <link href="/xifandanta.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://charo.xyz/"/>
+  <updated>2021-09-21T12:31:20.026Z</updated>
+  <id>https://charo.xyz/</id>
+  
+  <author>
+    <name>slh</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>my dear</title>
+    <link href="https://charo.xyz/2021/09/21/slh/"/>
+    <id>https://charo.xyz/2021/09/21/slh/</id>
+    <published>2021-09-20T18:05:31.000Z</published>
+    <updated>2021-09-21T12:31:20.026Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;It’s just a love letter&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;When？&quot;&gt;&lt;a href=&quot;#When？&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="love letter" scheme="https://charo.xyz/categories/love-letter/"/>
+    
+    
+      <category term="博客" scheme="https://charo.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+</feed>
