@@ -277,7 +277,7 @@ valine:
   appKey: 1dEMInXJr7nMtSYMFvMaUQTG
   notify: false
   verify: false
-  visitor: false
+  visitor: true
   avatar: 'wavatar' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
   pageSize: 10
   placeholder: '如果你没有GitHub账号，还可以在这里评论啦！' # Comment Box placeholder
