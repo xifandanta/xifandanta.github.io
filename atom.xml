@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>pluto 小站</title>
+  
+  <subtitle>Charo</subtitle>
+  <link href="/xifandanta.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://charo.xyz/"/>
+  <updated>2021-09-29T09:05:50.880Z</updated>
+  <id>https://charo.xyz/</id>
+  
+  <author>
+    <name>slh</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://charo.xyz/2021/09/29/test/"/>
+    <id>https://charo.xyz/2021/09/29/test/</id>
+    <published>2021-09-29T05:46:52.000Z</published>
+    <updated>2021-09-29T09:05:50.880Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;#this is a test&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://r02y8mxs0.hb-bkt.clouddn.com/blog/202109291703689.jpg&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>First blog post</title>
+    <link href="https://charo.xyz/2021/09/21/slh/"/>
+    <id>https://charo.xyz/2021/09/21/slh/</id>
+    <published>2021-09-20T18:05:31.000Z</published>
+    <updated>2021-10-02T18:07:16.482Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;This is just a readme file&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;When？&quot;&gt;&lt;a href=&quot;#When？&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="the first blog" scheme="https://charo.xyz/categories/the-first-blog/"/>
+    
+    
+      <category term="博客" scheme="https://charo.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+</feed>
