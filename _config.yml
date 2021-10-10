@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://charo.xyz
+url: https://charo.xyz/
 root: /xifandanta.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -115,14 +115,6 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: matery
-
-
-# 自动生成sitemap
-sitemap:
-path: sitemap.xml
-baidusitemap:
-path: baidusitemap.xml
-
 
 
 # Deployment
