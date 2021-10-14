@@ -1,16 +1,17 @@
 ---
 title: 打靶AdmX_new
 top: false
-cover: false
+cover: true
 toc: true
 mathjax: true
+tags:
+  - 博客
+categories:
+  - 靶机：AdmX_new
+abbrlink: 57827
 date: 2021-10-10 14:20:53
 password:
 summary:
-tags:
-- 博客
-categories:
-- 靶机：AdmX_new
 ---
 
 > 靶机地址：https://download.vulnhub.com/admx/AdmX_new.7z

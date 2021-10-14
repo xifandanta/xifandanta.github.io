@@ -1,16 +1,17 @@
 ---
-title: First blog post 
+title: First blog post
 top: false
-cover: false
+cover: true
 toc: true
 mathjax: true
+tags:
+  - 博客
+categories:
+  - the first blog
+abbrlink: 51778
 date: 2021-09-21 02:05:31
 password:
 summary:
-tags:
-- 博客
-categories:
-- the first blog
 ---
 
 > This is just a readme file

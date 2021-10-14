@@ -1,16 +1,17 @@
 ---
 title: BurpSuite插件编写
 top: false
-cover: false
+cover: true
 toc: true
 mathjax: true
+tags:
+  - 博客
+categories:
+  - BurpSuite插件编写
+abbrlink: 44963
 date: 2021-10-14 12:51:04
 password:
 summary:
-tags:
-- 博客
-categories:
-- BurpSuite插件编写
 ---
 
 > 这是我去年写的插件和记录，今天翻文件夹的时候找出来了，里面的内容可能有些过时，有些图是新配的，如果写的有些不到位，大佬轻喷。
