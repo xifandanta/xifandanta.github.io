@@ -22,8 +22,7 @@
 
             <div class="description center-align">
                 <% if (config.description && config.description.length > 0) { %>
-                    <%= config.description %>
-                      This is your root _config.yml 'description' value.
+                    <%= config.description %>                     
                 <% } else { %>
                     This is your root _config.yml 'description' value.
                 <% } %>
