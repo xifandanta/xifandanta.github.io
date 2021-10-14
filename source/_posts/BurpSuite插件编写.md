@@ -12,6 +12,7 @@ abbrlink: 44963
 date: 2021-10-14 12:51:04
 password:
 summary:
+  - Shiro,Fastjson,Jackson,Thinkphp,越权
 ---
 
 > 这是我去年写的插件和记录，今天翻文件夹的时候找出来了，里面的内容可能有些过时，有些图是新配的，如果写的有些不到位，大佬轻喷。
@@ -28,7 +29,7 @@ summary:
 
 我们先来总结一下我们需要扫描的漏洞原理和插入点。
 
-- #### *shiro*漏洞
+- #### *Shiro*漏洞
 
   - ##### 原理
 
@@ -49,7 +50,7 @@ summary:
 
      	body（参数名可以随意定义）
 
-- #### *jackson*漏洞
+- #### *Jackson*漏洞
 
   - ##### 原理
 
@@ -354,5 +355,5 @@ summary:
 
 ### 总结
 
-​	这样就完成了这个*BurpSuite*插件的编写，可以扫描***shiro***，***Fastjson***，***jackson***，***Thinkphp***漏洞，以及辅助**越权漏洞**的发现。
+​	这样就完成了这个*BurpSuite*插件的编写，可以扫描***Shiro***，***Fastjson***，***Jackson***，***Thinkphp***漏洞，以及辅助**越权漏洞**的发现。
 

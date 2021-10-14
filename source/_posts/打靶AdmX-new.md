@@ -12,6 +12,7 @@ abbrlink: 57827
 date: 2021-10-10 14:20:53
 password:
 summary:
+  - 取得root权限和2个flag
 ---
 
 > 靶机地址：https://download.vulnhub.com/admx/AdmX_new.7z

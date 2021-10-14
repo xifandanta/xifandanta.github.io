@@ -12,6 +12,7 @@ abbrlink: 34407
 date: 2021-10-14 20:44:17
 password:
 summary:
+  - 自动化xss攻击
 ---
 
 > 一个简单的xss自动攻击扫描器
