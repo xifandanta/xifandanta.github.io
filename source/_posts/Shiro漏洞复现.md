@@ -4,14 +4,15 @@ top: false
 cover: true
 toc: true
 mathjax: true
-date: 2021-10-16 14:08:02
-password:
 summary:
-  - Shiro-550,Shiro-721 and  CVE-2020-1957
+  - 'Shiro-550,Shiro-721 and  CVE-2020-1957'
 tags:
   - 博客
 categories:
   - 靶场：Vulhub-Shiro
+abbrlink: 51574
+date: 2021-10-16 14:08:02
+password:
 ---
 
 > 前面那篇博客介绍了这几个漏洞如何发现，接下来这几篇博客将对这几个漏洞进行复现，包括新增加的一些漏洞版本。

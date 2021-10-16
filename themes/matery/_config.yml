@@ -5,7 +5,7 @@ menu:
     url: /
     icon: fa-home
   Tags:
-    url: /tags
+    url: https://charo.xyz/tags/
     icon: fa-tags
   Categories:
     url: /categories
