@@ -5,22 +5,22 @@ menu:
     url: /
     icon: fa-home
   Tags:
-    url: https://charo.xyz/tags/
+    url: /tags/
     icon: fa-tags
   Categories:
-    url: /categories
+    url: /categories/
     icon: fa-bookmark
   Archives:
-    url: /archives
+    url: /archives/
     icon: fa-archive
   About:
-    url: /about
+    url: /about/
     icon: fa-user-circle-o
   Friends:
-    url: /friends
+    url: /friends/
     icon: fa-address-book
   Contact:
-    url: /contact
+    url: /contact/
     icon: fa-comments
 
 # Index cover carousel configuration.
