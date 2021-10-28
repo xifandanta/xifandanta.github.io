@@ -10,35 +10,10 @@
 		"url": "/medias/music/alasijiahaiwan.mp3",
 		"cover": "/medias/music/avatars/alasijiahaiwan.jpg"
 	},{
-		"name": "安和桥",
-		"artist": " 宋冬野",
-		"url": "/medias/music/anheqiao.mp3",
-		"cover": "/medias/music/avatars/anheqiao.jpg"
-	},{
-		"name": "饿狼传说",
-		"artist": "张学友",
-		"url": "/medias/music/elangchuanshuo.mp3",
-		"cover": "/medias/music/avatars/elangchuanshuo.jpg"
-	},{
-		"name": "黄昏",
-		"artist": "周传雄",
-		"url": "/medias/music/huanghun.mp3",
-		"cover": "/medias/music/avatars/huanghun.jpg"
-	},{
-		"name": "来生缘",
-		"artist": "刘德华",
-		"url": "/medias/music/laishengyuan.mp3",
-		"cover": "/medias/music/avatars/laishengyuan.jpg"
-	},{
-		"name": "男孩",
-		"artist": "梁博",
-		"url": "/medias/music/nanhai.mp3",
-		"cover": "/medias/music/avatars/nanhai.jpg"
-	},{
-		"name": "偏爱",
-		"artist": "张芸京",
-		"url": "/medias/music/pianai.mp3",
-		"cover": "/medias/music/avatars/pianai.jpg"
+		"name": "稻香",
+		"artist": "周杰伦",
+		"url": "/medias/music/daoxiang.mp3",
+		"cover": "/medias/music/avatars/daoxiang.jpg"
 	},{
 		"name": "破茧",
 		"artist": "张韶涵",
@@ -50,40 +25,10 @@
 		"url": "/medias/music/qifengl.mp3",
 		"cover": "/medias/music/avatars/qifengl.jpg"
 	},{
-		"name": "千千阙歌",
-		"artist": "张国荣",
-		"url": "/medias/music/qianqianquege.mp3",
-		"cover": "/medias/music/avatars/qianqianquege.jpg"
-	},{
-		"name": "桥边姑娘",
-		"artist": "海伦",
-		"url": "/medias/music/qiaobianguniang.mp3",
-		"cover": "/medias/music/avatars/qiaobianguniang.jpg"
-	},{
 		"name": "天下无双",
 		"artist": "张靓颖",
 		"url": "/medias/music/tianxiawushang.mp3",
 		"cover": "/medias/music/avatars/tianxiawushang.jpg"
-	},{
-		"name": "吻别",
-		"artist": "张学友",
-		"url": "/medias/music/wenbie.mp3",
-		"cover": "/medias/music/avatars/wenbie.jpg"
-	},{
-		"name": "头发乱了",
-		"artist": "张学友",
-		"url": "/medias/music/toufaluanl.mp3",
-		"cover": "/medias/music/avatars/toufaluanl.jpg"
-	},{
-		"name": "我爱他",
-		"artist": "丁当",
-		"url": "/medias/music/woaita.mp3",
-		"cover": "/medias/music/avatars/woaita.jpg"
-	},{
-		"name": "我的天空",
-		"artist": "南征北战NZBZ",
-		"url": "/medias/music/wodetiankong.mp3",
-		"cover": "/medias/music/avatars/wodetiankong.jpg"
 	},{
 		"name": "我的一个道姑朋友",
 		"artist": "柠萌",
@@ -95,16 +40,6 @@
 		"url": "/medias/music/wohaoxiangzainajianguoni.mp3",
 		"cover": "/medias/music/avatars/wohaoxiangzainajianguoni.jpg"
 	},{
-		"name": "我要你",
-		"artist": "任素汐",
-		"url": "/medias/music/woyaoni.mp3",
-		"cover": "/medias/music/avatars/woyaoni.jpg"
-	},{
-		"name": "信仰",
-		"artist": "张信哲",
-		"url": "/medias/music/xingyang.mp3",
-		"cover": "/medias/music/avatars/xingyang.jpg"
-	},{
 		"name": "遥远的她",
 		"artist": "张学友",
 		"url": "/medias/music/yaoyuandeta.mp3",
@@ -115,30 +50,10 @@
 		"url": "/medias/music/yekongzhongzuiliangdexing.mp3",
 		"cover": "/medias/music/avatars/yekongzhongzuiliangdexing.jpg"
 	},{
-		"name": "一千个伤心的理由",
-		"artist": "张学友",
-		"url": "/medias/music/yiqiangeshangxindeliyou.mp3",
-		"cover": "/medias/music/avatars/yiqiangeshangxindeliyou.jpg"
-	},{
-		"name": "一生所爱",
-		"artist": "卢冠廷、莫文蔚",
-		"url": "/medias/music/yishengsuoai.mp3",
-		"cover": "/medias/music/avatars/yishengsuoai.jpg"
-	},{
 		"name": "意外",
 		"artist": "薛之谦",
 		"url": "/medias/music/yiwai.mp3",
 		"cover": "/medias/music/avatars/yiwai.jpg"
-	},{
-		"name": "有一种悲伤",
-		"artist": "A-Lin",
-		"url": "/medias/music/youtizhongbeishang.mp3",
-		"cover": "/medias/music/avatars/youtizhongbeishang.jpg"
-	},{
-		"name": "饿狼传说",
-		"artist": "张学友",
-		"url": "/medias/music/elangchuanshuo.mp3",
-		"cover": "/medias/music/avatars/elangchuanshuo.jpg"
 	},{
 		"name": "月半小夜曲",
 		"artist": "李克勤",
@@ -149,15 +64,5 @@
 		"artist": "尤长靖",
 		"url": "/medias/music/zuoriqingkong.mp3",
 		"cover": "/medias/music/avatars/zuoriqingkong.jpg"
-	},{
-		"name": "放空",
-		"artist": "A1 TRIP、大籽、Lil E",
-		"url": "/medias/music/fangkong.mp3",
-		"cover": "/medias/music/avatars/fangkong.jpg"
-	},{
-		"name": "飘向北方(Live)",
-		"artist": "那吾克热-NW、尤长靖",
-		"url": "/medias/music/piaoxiangbeifang.mp3",
-		"cover": "/medias/music/avatars/piaoxiangbeifang.jpg"
 	}
 ]
