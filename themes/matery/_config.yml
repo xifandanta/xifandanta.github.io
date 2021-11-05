@@ -79,8 +79,8 @@ recommend:
 
 # Configure website favicon and LOGO
 # 配置网站favicon和网站LOGO
-favicon: /favicon.png
-logo: /medias/logo.png
+favicon: http://pic.charo.xyz/blog/202111051410579.png
+logo: http://pic.charo.xyz/blog/202111051411200.png
 
 # The configuration of the second button in the home banner,
 # including the display name of the button, the font awesome icon, and the hyperlink to the button.
@@ -119,8 +119,8 @@ code:
 reward:
   enable: true
   title: 写作不易，客官能否打赏一杯奶茶？
-  wechat: /medias/reward/wechat.jpg
-  alipay: /medias/reward/alipay.jpg
+  wechat: http://pic.charo.xyz/blog/202111051411098.jpg
+  alipay: http://pic.charo.xyz/blog/202111051411632.jpg
 
 # Whether to activate the copyright information of the blog and author when copying the post content.
 # minCharNumber: Approve copyright information by copying at least how many characters.
