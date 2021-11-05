@@ -1,19 +1,19 @@
 [
 	{
-		"name": "玫瑰",
+		"name": "稻香",
 		"artist": "贰佰",
-		"url": "/medias/music/meigui.mp3",
-		"cover": "/medias/music/avatars/meigui.jpg"
+		"url": "/medias/music/daoxiang.mp3",
+		"cover": "/medias/music/avatars/daoxiang.jpg"
 	},{
 		"name": "阿拉斯加海湾",
 		"artist": " 蓝心羽",
 		"url": "/medias/music/alasijiahaiwan.mp3",
 		"cover": "/medias/music/avatars/alasijiahaiwan.jpg"
 	},{
-		"name": "稻香",
-		"artist": "周杰伦",
-		"url": "/medias/music/daoxiang.mp3",
-		"cover": "/medias/music/avatars/daoxiang.jpg"
+		"name": "玫瑰",
+		"artist": "贰佰",
+		"url": "/medias/music/meigui.mp3",
+		"cover": "/medias/music/avatars/meigui.jpg"
 	},{
 		"name": "破茧",
 		"artist": "张韶涵",
