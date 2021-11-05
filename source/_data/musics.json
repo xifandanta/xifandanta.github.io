@@ -1,68 +1,68 @@
 [
 	{
 		"name": "稻香",
-		"artist": "贰佰",
-		"url": "/medias/music/daoxiang.mp3",
+		"artist": "周杰伦",
+		"url": "http://pic.charo.xyz/daoxiang.mp3",
 		"cover": "/medias/music/avatars/daoxiang.jpg"
 	},{
 		"name": "阿拉斯加海湾",
 		"artist": " 蓝心羽",
-		"url": "/medias/music/alasijiahaiwan.mp3",
+		"url": "http://pic.charo.xyz/alasijiahaiwan.mp3",
 		"cover": "/medias/music/avatars/alasijiahaiwan.jpg"
 	},{
 		"name": "玫瑰",
 		"artist": "贰佰",
-		"url": "/medias/music/meigui.mp3",
+		"url": "http://pic.charo.xyz/meigui.mp3",
 		"cover": "/medias/music/avatars/meigui.jpg"
 	},{
 		"name": "破茧",
 		"artist": "张韶涵",
-		"url": "/medias/music/pojian.mp3",
+		"url": "http://pic.charo.xyz/pojian.mp3",
 		"cover": "/medias/music/avatars/pojian.jpg"
 	},{
 		"name": "起风了",
 		"artist": "吴青峰",
-		"url": "/medias/music/qifengl.mp3",
+		"url": "http://pic.charo.xyz/qifengl.mp3",
 		"cover": "/medias/music/avatars/qifengl.jpg"
 	},{
 		"name": "天下无双",
 		"artist": "张靓颖",
-		"url": "/medias/music/tianxiawushang.mp3",
+		"url": "http://pic.charo.xyz/tianxiawushang.mp3",
 		"cover": "/medias/music/avatars/tianxiawushang.jpg"
 	},{
 		"name": "我的一个道姑朋友",
 		"artist": "柠萌",
-		"url": "/medias/music/wodeyigedaogupengyou.mp3",
+		"url": "http://pic.charo.xyz/wodeyigedaogupengyou.mp3",
 		"cover": "/medias/music/avatars/wodeyigedaogupengyou.jpg"
 	},{
 		"name": "我好像在哪见过你",
 		"artist": "薛之谦",
-		"url": "/medias/music/wohaoxiangzainajianguoni.mp3",
+		"url": "http://pic.charo.xyz/wohaoxiangzainajianguoni.mp3",
 		"cover": "/medias/music/avatars/wohaoxiangzainajianguoni.jpg"
 	},{
 		"name": "遥远的她",
 		"artist": "张学友",
-		"url": "/medias/music/yaoyuandeta.mp3",
+		"url": "http://pic.charo.xyz/yaoyuandeta.mp3",
 		"cover": "/medias/music/avatars/yaoyuandeta.jpg"
 	},{
 		"name": "夜空中最亮的星",
 		"artist": "逃跑计划",
-		"url": "/medias/music/yekongzhongzuiliangdexing.mp3",
+		"url": "http://pic.charo.xyz/yekongzhongzuiliangdexing.mp3",
 		"cover": "/medias/music/avatars/yekongzhongzuiliangdexing.jpg"
 	},{
 		"name": "意外",
 		"artist": "薛之谦",
-		"url": "/medias/music/yiwai.mp3",
+		"url": "http://pic.charo.xyz/yiwai.mp3",
 		"cover": "/medias/music/avatars/yiwai.jpg"
 	},{
 		"name": "月半小夜曲",
 		"artist": "李克勤",
-		"url": "/medias/music/yuebanxiaoyequ.mp3",
+		"url": "http://pic.charo.xyz/yuebanxiaoyequ.mp3",
 		"cover": "/medias/music/avatars/yuebanxiaoyequ.jpg"
 	},{
 		"name": "昨日青空",
 		"artist": "尤长靖",
-		"url": "/medias/music/zuoriqingkong.mp3",
+		"url": "http://pic.charo.xyz/zuoriqingkong.mp3",
 		"cover": "/medias/music/avatars/zuoriqingkong.jpg"
 	}
 ]

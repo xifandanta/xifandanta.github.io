@@ -19,7 +19,7 @@ summary:
 
 ### *payload*
 
-​	![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110142051360.png)
+​	![](http://pic.charo.xyz/blog/202110142051360.png)
 
 ### 实现代码
 
@@ -78,11 +78,11 @@ class BurpExtender(IBurpExtender, IScannerCheck):
 
 ### 测试结果
 
-新建被动扫描策略，且只加载插件策略![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110142107861.png)
+新建被动扫描策略，且只加载插件策略![](http://pic.charo.xyz/blog/202110142107861.png)
 
-假设测试新浪网，我们随意在它后面增加参数![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110142121091.png)
+假设测试新浪网，我们随意在它后面增加参数![](http://pic.charo.xyz/blog/202110142121091.png)
 
-然后我们可以查看插件中打印出来的信息![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110142121094.png)
+然后我们可以查看插件中打印出来的信息![](http://pic.charo.xyz/blog/202110142121094.png)
 
 
 

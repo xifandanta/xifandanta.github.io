@@ -74,13 +74,13 @@ summary:
 
   - 以上漏洞三个漏洞没有回显，所以要调用*dnslog*
 
-    点击`Run health check`来查看一下`Burp Collaborator Server`的情况![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141533996.jpeg)
+    点击`Run health check`来查看一下`Burp Collaborator Server`的情况![](http://pic.charo.xyz/blog/202110141533996.jpeg)
 
-    正常即可，如果出现下面这种情况![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141534671.jpeg)
+    正常即可，如果出现下面这种情况![](http://pic.charo.xyz/blog/202110141534671.jpeg)
 
     就要打开`Poll over unencrypted HTTP` 之后为了方便可以保存项目选项，在下一次启动时导入即可
 
-    ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141535684.png)
+    ![](http://pic.charo.xyz/blog/202110141535684.png)
 
 - #### 越权插件（被动扫描）
 
@@ -162,7 +162,7 @@ summary:
 
   ​		 进入shiro目录
 
-  ​		 ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141631018.jpeg)
+  ​		 ![](http://pic.charo.xyz/blog/202110141631018.jpeg)
 
   ​		输入启动命令
 
@@ -179,7 +179,7 @@ summary:
   sudo docker ps
   ```
 
-  ​		![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141633422.jpeg)
+  ​		![](http://pic.charo.xyz/blog/202110141633422.jpeg)
 
   ​			关闭服务
 
@@ -191,9 +191,9 @@ summary:
 
 - #### *dsnlog*编写
 
-  ​    首先引入了`IBurpCollaboratorInteraction`库和`IBurpCollaboratorClientContext`库然后引入了时间`time`，让它在完成后进入休眠。![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141806430.png)
+  ​    首先引入了`IBurpCollaboratorInteraction`库和`IBurpCollaboratorClientContext`库然后引入了时间`time`，让它在完成后进入休眠。![](http://pic.charo.xyz/blog/202110141806430.png)
 
-  ​	 打印对象![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141808886.png)
+  ​	 打印对象![](http://pic.charo.xyz/blog/202110141808886.png)
 
   ​	建立循环侦听，有两种侦听方法
 
@@ -203,9 +203,9 @@ summary:
 
   ​		最后再来手动触发`ping  fp8tkoehkvv60uh0j4mgd4fa51brzg.burpcollaborator.net -c 1`。
 
-  ​		具体如下![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141831029.png)
+  ​		具体如下![](http://pic.charo.xyz/blog/202110141831029.png)
 
-  ​		测试结果成功![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141814195.jpeg)
+  ​		测试结果成功![](http://pic.charo.xyz/blog/202110141814195.jpeg)
 
   
 
@@ -217,45 +217,45 @@ summary:
 
   ​	首先我们定义域名列表，注册调用POC类（这一步所有模块都相同）
 
-  ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141829087.png)
+  ![](http://pic.charo.xyz/blog/202110141829087.png)
 
-  ​	![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141829603.png)
+  ​	![](http://pic.charo.xyz/blog/202110141829603.png)
 
   ​		因为这块是主动扫描，所以被动扫描返回空	
 
-  ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141829375.png)
+  ![](http://pic.charo.xyz/blog/202110141829375.png)
 
   ​		一个路径下出现如果多个一样的问题，实现只报一次
 
-  ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141830849.png)
+  ![](http://pic.charo.xyz/blog/202110141830849.png)
 
-  ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141830623.png)
+  ![](http://pic.charo.xyz/blog/202110141830623.png)
 
-  ​		获取http服务信息![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141834164.png)
+  ​		获取http服务信息![](http://pic.charo.xyz/blog/202110141834164.png)
 
-  ​		判断是否存在，若不存在则加入列表中![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141842173.png)
+  ​		判断是否存在，若不存在则加入列表中![](http://pic.charo.xyz/blog/202110141842173.png)
 
-  ​			system执行payload![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141843663.png)
+  ​			system执行payload![](http://pic.charo.xyz/blog/202110141843663.png)
 
-  ​			dns接口查询，并返回信息![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141843582.png)
+  ​			dns接口查询，并返回信息![](http://pic.charo.xyz/blog/202110141843582.png)
 
   ***poc.py中：***
 
 ​				判断并增加http协议
 
-​				![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141852593.png)
+​				![](http://pic.charo.xyz/blog/202110141852593.png)
 
 ​				多线程并发
 
-![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141853330.png)
+![](http://pic.charo.xyz/blog/202110141853330.png)
 
 ​				实现函数
 
-![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141855874.png)
+![](http://pic.charo.xyz/blog/202110141855874.png)
 
 ​		***加载插件扫描结果：***
 
-​					![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141900306.png)
+​					![](http://pic.charo.xyz/blog/202110141900306.png)
 
 - #### *Fastjosn*模块
 
@@ -263,71 +263,71 @@ summary:
 
   ​			定义域名列表，注册调用POC类同上
 
-  ​			分别实现*url*和*域名*扫描模块![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141908727.png)
+  ​			分别实现*url*和*域名*扫描模块![](http://pic.charo.xyz/blog/202110141908727.png)
 
-  ​			定义报告结构列表，遍历并返回![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110142023230.png)
+  ​			定义报告结构列表，遍历并返回![](http://pic.charo.xyz/blog/202110142023230.png)
 
   ​			开始扫描
 
   ​		***url*扫描**
 
-  ​			判断类型，get则跳过，判断插入类型，不是json则跳过![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141913225.png)
+  ​			判断类型，get则跳过，判断插入类型，不是json则跳过![](http://pic.charo.xyz/blog/202110141913225.png)
 
-  ​			替换并添加*json*请求头![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141914688.png)
+  ​			替换并添加*json*请求头![](http://pic.charo.xyz/blog/202110141914688.png)
 
-  ​			*dnslog*接口查询![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141920421.png)
+  ​			*dnslog*接口查询![](http://pic.charo.xyz/blog/202110141920421.png)
 
   ​		***域名扫描：***
 
-  ​				对没有参数的域名，做一次扫描 , 如果是 repeater 来的包, GET 第一次会转POST扫描一遍![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141924014.png)
+  ​				对没有参数的域名，做一次扫描 , 如果是 repeater 来的包, GET 第一次会转POST扫描一遍![](http://pic.charo.xyz/blog/202110141924014.png)
 
-  ​				产生*dnglog*，遍历*poc*	![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141925618.png)			*dnslog*接口查询![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141927866.png)
+  ​				产生*dnglog*，遍历*poc*	![](http://pic.charo.xyz/blog/202110141925618.png)			*dnslog*接口查询![](http://pic.charo.xyz/blog/202110141927866.png)
 
   ​				
 
   ​		***poc.py中：***
 
-  ​			*Fastjson*  payload![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141906839.png)
+  ​			*Fastjson*  payload![](http://pic.charo.xyz/blog/202110141906839.png)
 
   ​    ***加载插件扫描结果：***
 
-  ​                 ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141929637.png)
+  ​                 ![](http://pic.charo.xyz/blog/202110141929637.png)
 
 - #### *Jackson*模块
 
   ​	***vulscan中：***
 
-  ​			*url*扫描![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141937128.png)
+  ​			*url*扫描![](http://pic.charo.xyz/blog/202110141937128.png)
 
-  ​			判断类型，get则返回 ，判断插入类型不是json则跳过![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141940929.png)
+  ​			判断类型，get则返回 ，判断插入类型不是json则跳过![](http://pic.charo.xyz/blog/202110141940929.png)
 
-  ​			遍历poc列表![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141940472.png)
+  ​			遍历poc列表![](http://pic.charo.xyz/blog/202110141940472.png)
 
-  ​			*dnslog*接口查询![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141941682.png)
+  ​			*dnslog*接口查询![](http://pic.charo.xyz/blog/202110141941682.png)
 
   ​	***poc.py中：***
 
-  ​			*Jackson* *payload*![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141934411.png)
+  ​			*Jackson* *payload*![](http://pic.charo.xyz/blog/202110141934411.png)
 
   ​	***加载插件扫描结果：***（记得替换参数）
 
-  ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141943814.png)
+  ![](http://pic.charo.xyz/blog/202110141943814.png)
 
-  ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141943521.png)
+  ![](http://pic.charo.xyz/blog/202110141943521.png)
 
 - #### *Thinkphp*  模块
 
   ​	***vulscan中：***
 
-  ​			这里用的是非阻塞模式，这比较简单，就不分块了![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141948388.png)
+  ​			这里用的是非阻塞模式，这比较简单，就不分块了![](http://pic.charo.xyz/blog/202110141948388.png)
 
   ​	***poc.py中：***
 
-  ​			PHP payload![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141954650.png)
+  ​			PHP payload![](http://pic.charo.xyz/blog/202110141954650.png)
 
   ​	***加载插件扫描结果：***
 
-  ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110141947131.png)
+  ![](http://pic.charo.xyz/blog/202110141947131.png)
 
 - #### ***越权模块***
 
@@ -335,23 +335,23 @@ summary:
 
   ​		逻辑漏洞
 
-  ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110142002919.png)
+  ![](http://pic.charo.xyz/blog/202110142002919.png)
 
   ​		代码实现
 
-  ​		![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110142004021.png)
+  ​		![](http://pic.charo.xyz/blog/202110142004021.png)
 
   ​		加载插件扫描结果
 
-  ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110142023214.png)
+  ![](http://pic.charo.xyz/blog/202110142023214.png)
 
 - #### *其他代码*
 
-  ​		报告漏洞类![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110142019727.png)
+  ​		报告漏洞类![](http://pic.charo.xyz/blog/202110142019727.png)
 
-  ​		字符串高亮![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110142020805.png)
+  ​		字符串高亮![](http://pic.charo.xyz/blog/202110142020805.png)
 
-  ​		日志配置![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110142022802.png)
+  ​		日志配置![](http://pic.charo.xyz/blog/202110142022802.png)
 
 ### 总结
 
