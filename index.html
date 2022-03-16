@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>pluto 小站</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="http://pic.charo.xyz/blog/202111051410579.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -66,8 +66,8 @@
         })();
     </script>
 
-<link rel="stylesheet" href="/xifandanta.github.io/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/xifandanta.github.io/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
 
@@ -75,9 +75,9 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/xifandanta.github.io/" class="waves-effect waves-light">
+                <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="http://pic.charo.xyz/blog/202111051411200.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">pluto 小站</span>
                 </a>
@@ -97,7 +97,7 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/tags" class="waves-effect waves-light">
+        <a href="/tags/" class="waves-effect waves-light">
             
             <i class="fa fa-tags"></i>
             
@@ -106,7 +106,7 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/categories" class="waves-effect waves-light">
+        <a href="/categories/" class="waves-effect waves-light">
             
             <i class="fa fa-bookmark"></i>
             
@@ -115,7 +115,7 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/archives" class="waves-effect waves-light">
+        <a href="/archives/" class="waves-effect waves-light">
             
             <i class="fa fa-archive"></i>
             
@@ -124,7 +124,7 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
+        <a href="/about/" class="waves-effect waves-light">
             
             <i class="fa fa-user-circle-o"></i>
             
@@ -133,7 +133,7 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/friends" class="waves-effect waves-light">
+        <a href="/friends/" class="waves-effect waves-light">
             
             <i class="fa fa-address-book"></i>
             
@@ -142,7 +142,7 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/contact" class="waves-effect waves-light">
+        <a href="/contact/" class="waves-effect waves-light">
             
             <i class="fa fa-comments"></i>
             
@@ -161,7 +161,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="http://pic.charo.xyz/blog/202111051411200.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">pluto 小站</div>
         <div class="logo-desc">
@@ -185,7 +185,7 @@
         </li>
         
         <li>
-            <a href="/tags" class="waves-effect waves-light">
+            <a href="/tags/" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-tags"></i>
                 
@@ -194,7 +194,7 @@
         </li>
         
         <li>
-            <a href="/categories" class="waves-effect waves-light">
+            <a href="/categories/" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-bookmark"></i>
                 
@@ -203,7 +203,7 @@
         </li>
         
         <li>
-            <a href="/archives" class="waves-effect waves-light">
+            <a href="/archives/" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-archive"></i>
                 
@@ -212,7 +212,7 @@
         </li>
         
         <li>
-            <a href="/about" class="waves-effect waves-light">
+            <a href="/about/" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
@@ -221,7 +221,7 @@
         </li>
         
         <li>
-            <a href="/friends" class="waves-effect waves-light">
+            <a href="/friends/" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-address-book"></i>
                 
@@ -230,7 +230,7 @@
         </li>
         
         <li>
-            <a href="/contact" class="waves-effect waves-light">
+            <a href="/contact/" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-comments"></i>
                 
@@ -358,6 +358,13 @@
 
 <div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
     
+    <div id="prev-cover" class="left waves-effect carousel-control">
+        <i class="icon fa fa-angle-left"></i>
+    </div>
+    <div id="next-cover" class="right waves-effect carousel-control">
+        <i class="icon fa fa-angle-right"></i>
+    </div>
+    
 
     <div class="carousel-item red white-text bg-cover about-cover">
         <div class="container">
@@ -386,9 +393,10 @@
     </div>
 </div>
 <script>
-// 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getHours() + '.jpg)');
+    //) 每天切换 banner 图.  Switch banner image every day.
+    $('.bg-cover').css('background-image', 'url(http://pic.charo.xyz/blog/39.jpg)');
 </script>
+
 
             <div class="cover-btns">
                 <a href="#indexCard" class="waves-effect waves-light btn">
@@ -432,13 +440,193 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getHou
 
 
 
-    <a href="/xifandanta.github.io/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
         </div>
     </div>
 
+    
+    
+
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('http://pic.charo.xyz/blog/13.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">First blog post</div>
+                    <div class="description center-align">
+                    
+                        一个简单的自述
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/posts/51778.html" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('http://pic.charo.xyz/blog/41.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">BurpSuite插件编写</div>
+                    <div class="description center-align">
+                    
+                        Shiro,Fastjson,Jackson,Thinkphp,越权
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/posts/44963.html" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('http://pic.charo.xyz/blog/33.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">xss自动化攻击</div>
+                    <div class="description center-align">
+                    
+                        自动化xss攻击
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/posts/34407.html" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('http://pic.charo.xyz/blog/18.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">Shiro漏洞复现</div>
+                    <div class="description center-align">
+                    
+                        Shiro-550,Shiro-721 and  CVE-2020-1957
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/posts/51574.html" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('http://pic.charo.xyz/blog/31.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">打靶AdmX_new</div>
+                    <div class="description center-align">
+                    
+                        取得root权限和2个flag
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/posts/57827.html" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('http://pic.charo.xyz/blog/36.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">一次简单的打靶</div>
+                    <div class="description center-align">
+                    
+                        提权
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/posts/21875.html" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('http://pic.charo.xyz/blog/2.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">中等难度打靶</div>
+                    <div class="description center-align">
+                    
+                        提权
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/posts/8336.html" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('http://pic.charo.xyz/blog/12.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">简单靶机</div>
+                    <div class="description center-align">
+                    
+                        取得root权限+两个flag
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/posts/31336.html" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     
 </div>
 
@@ -531,12 +719,12 @@ $(function () {
         autoplay: 'true' === 'true',
         theme: '#542674',
         loop: 'all',
-        order: 'random',
+        order: 'list',
         preload: 'auto',
         volume: Number('0.7'),
         listFolded: 'true' === 'true',
         listMaxHeight: '',
-        audio: JSON.parse('[{"name":"玫瑰","artist":"贰佰","url":"/medias/music/meigui.mp3","cover":"/medias/music/avatars/meigui.jpg"},{"name":"阿拉斯加海湾","artist":" 蓝心羽","url":"/medias/music/alasijiahaiwan.mp3","cover":"/medias/music/avatars/alasijiahaiwan.jpg"},{"name":"安和桥","artist":" 宋冬野","url":"/medias/music/anheqiao.mp3","cover":"/medias/music/avatars/anheqiao.jpg"},{"name":"饿狼传说","artist":"张学友","url":"/medias/music/elangchuanshuo.mp3","cover":"/medias/music/avatars/elangchuanshuo.jpg"},{"name":"黄昏","artist":"周传雄","url":"/medias/music/huanghun.mp3","cover":"/medias/music/avatars/huanghun.jpg"},{"name":"来生缘","artist":"刘德华","url":"/medias/music/laishengyuan.mp3","cover":"/medias/music/avatars/laishengyuan.jpg"},{"name":"男孩","artist":"梁博","url":"/medias/music/nanhai.mp3","cover":"/medias/music/avatars/nanhai.jpg"},{"name":"偏爱","artist":"张芸京","url":"/medias/music/pianai.mp3","cover":"/medias/music/avatars/pianai.jpg"},{"name":"破茧","artist":"张韶涵","url":"/medias/music/pojian.mp3","cover":"/medias/music/avatars/pojian.jpg"},{"name":"起风了","artist":"吴青峰","url":"/medias/music/qifengl.mp3","cover":"/medias/music/avatars/qifengl.jpg"},{"name":"千千阙歌","artist":"张国荣","url":"/medias/music/qianqianquege.mp3","cover":"/medias/music/avatars/qianqianquege.jpg"},{"name":"桥边姑娘","artist":"海伦","url":"/medias/music/qiaobianguniang.mp3","cover":"/medias/music/avatars/qiaobianguniang.jpg"},{"name":"天下无双","artist":"张靓颖","url":"/medias/music/tianxiawushang.mp3","cover":"/medias/music/avatars/tianxiawushang.jpg"},{"name":"吻别","artist":"张学友","url":"/medias/music/wenbie.mp3","cover":"/medias/music/avatars/wenbie.jpg"},{"name":"头发乱了","artist":"张学友","url":"/medias/music/toufaluanl.mp3","cover":"/medias/music/avatars/toufaluanl.jpg"},{"name":"我爱他","artist":"丁当","url":"/medias/music/woaita.mp3","cover":"/medias/music/avatars/woaita.jpg"},{"name":"我的天空","artist":"南征北战NZBZ","url":"/medias/music/wodetiankong.mp3","cover":"/medias/music/avatars/wodetiankong.jpg"},{"name":"我的一个道姑朋友","artist":"柠萌","url":"/medias/music/wodeyigedaogupengyou.mp3","cover":"/medias/music/avatars/wodeyigedaogupengyou.jpg"},{"name":"我好像在哪见过你","artist":"薛之谦","url":"/medias/music/wohaoxiangzainajianguoni.mp3","cover":"/medias/music/avatars/wohaoxiangzainajianguoni.jpg"},{"name":"我要你","artist":"任素汐","url":"/medias/music/woyaoni.mp3","cover":"/medias/music/avatars/woyaoni.jpg"},{"name":"信仰","artist":"张信哲","url":"/medias/music/xingyang.mp3","cover":"/medias/music/avatars/xingyang.jpg"},{"name":"遥远的她","artist":"张学友","url":"/medias/music/yaoyuandeta.mp3","cover":"/medias/music/avatars/yaoyuandeta.jpg"},{"name":"夜空中最亮的星","artist":"逃跑计划","url":"/medias/music/yekongzhongzuiliangdexing.mp3","cover":"/medias/music/avatars/yekongzhongzuiliangdexing.jpg"},{"name":"一千个伤心的理由","artist":"张学友","url":"/medias/music/yiqiangeshangxindeliyou.mp3","cover":"/medias/music/avatars/yiqiangeshangxindeliyou.jpg"},{"name":"一生所爱","artist":"卢冠廷、莫文蔚","url":"/medias/music/yishengsuoai.mp3","cover":"/medias/music/avatars/yishengsuoai.jpg"},{"name":"意外","artist":"薛之谦","url":"/medias/music/yiwai.mp3","cover":"/medias/music/avatars/yiwai.jpg"},{"name":"有一种悲伤","artist":"A-Lin","url":"/medias/music/youtizhongbeishang.mp3","cover":"/medias/music/avatars/youtizhongbeishang.jpg"},{"name":"饿狼传说","artist":"张学友","url":"/medias/music/elangchuanshuo.mp3","cover":"/medias/music/avatars/elangchuanshuo.jpg"},{"name":"月半小夜曲","artist":"李克勤","url":"/medias/music/yuebanxiaoyequ.mp3","cover":"/medias/music/avatars/yuebanxiaoyequ.jpg"},{"name":"昨日青空","artist":"尤长靖","url":"/medias/music/zuoriqingkong.mp3","cover":"/medias/music/avatars/zuoriqingkong.jpg"},{"name":"放空","artist":"A1 TRIP、大籽、Lil E","url":"/medias/music/fangkong.mp3","cover":"/medias/music/avatars/fangkong.jpg"},{"name":"飘向北方(Live)","artist":"那吾克热-NW、尤长靖","url":"/medias/music/piaoxiangbeifang.mp3","cover":"/medias/music/avatars/piaoxiangbeifang.jpg"}]')
+        audio: JSON.parse('[{"name":"稻香","artist":"周杰伦","url":"http://pic.charo.xyz/daoxiang.mp3","cover":"http://pic.charo.xyz/blog/202111051406019.png"},{"name":"阿拉斯加海湾","artist":" 蓝心羽","url":"http://pic.charo.xyz/alasijiahaiwan.mp3","cover":"http://pic.charo.xyz/blog/202111051407740.jpg"},{"name":"玫瑰","artist":"贰佰","url":"http://pic.charo.xyz/meigui.mp3","cover":"http://pic.charo.xyz/blog/202111051407518.jpg"},{"name":"破茧","artist":"张韶涵","url":"http://pic.charo.xyz/pojian.mp3","cover":"http://pic.charo.xyz/blog/202111051408355.jpg"},{"name":"起风了","artist":"吴青峰","url":"http://pic.charo.xyz/qifengl.mp3","cover":"http://pic.charo.xyz/blog/202111051408829.jpg"},{"name":"天下无双","artist":"张靓颖","url":"http://pic.charo.xyz/tianxiawushang.mp3","cover":"http://pic.charo.xyz/blog/202111051408779.jpg"},{"name":"我的一个道姑朋友","artist":"柠萌","url":"http://pic.charo.xyz/wodeyigedaogupengyou.mp3","cover":"http://pic.charo.xyz/blog/202111051408552.jpg"},{"name":"我好像在哪见过你","artist":"薛之谦","url":"http://pic.charo.xyz/wohaoxiangzainajianguoni.mp3","cover":"http://pic.charo.xyz/blog/202111051409862.jpg"},{"name":"遥远的她","artist":"张学友","url":"http://pic.charo.xyz/yaoyuandeta.mp3","cover":"http://pic.charo.xyz/blog/202111051409177.jpg"},{"name":"夜空中最亮的星","artist":"逃跑计划","url":"http://pic.charo.xyz/yekongzhongzuiliangdexing.mp3","cover":"http://pic.charo.xyz/blog/202111051409171.jpg"},{"name":"意外","artist":"薛之谦","url":"http://pic.charo.xyz/yiwai.mp3","cover":"http://pic.charo.xyz/blog/202111051409719.jpg"},{"name":"月半小夜曲","artist":"李克勤","url":"http://pic.charo.xyz/yuebanxiaoyequ.mp3","cover":"http://pic.charo.xyz/blog/202111051409186.jpg"},{"name":"昨日青空","artist":"尤长靖","url":"http://pic.charo.xyz/zuoriqingkong.mp3","cover":"http://pic.charo.xyz/blog/202111051410434.jpg"}]')
     });
 });
 </script>
@@ -564,22 +752,302 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/xifandanta.github.io/2021/09/29/test/" target="_blank">
+                    <a href="/posts/51574.html" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/58.jpg" class="responsive-img" alt="test">
+                            <img src="http://pic.charo.xyz/blog/18.jpg" class="responsive-img" alt="Shiro漏洞复现">
                             
-                            <span class="card-title">test</span>
+                            <span class="card-title">Shiro漏洞复现</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                            #this is a test
+                            Shiro-550,Shiro-721 and  CVE-2020-1957
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-16
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/靶场：Vulhub-Shiro/" class="post-category" target="_blank">
+                                    靶场：Vulhub-Shiro
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
 
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/34407.html" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="http://pic.charo.xyz/blog/33.jpg" class="responsive-img" alt="xss自动化攻击">
+                            
+                            <span class="card-title">xss自动化攻击</span>
+                        </div>
+                    </a>
 
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            自动化xss攻击
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Burp插件-xss自动化攻击/" class="post-category" target="_blank">
+                                    Burp插件---xss自动化攻击
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/44963.html" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="http://pic.charo.xyz/blog/41.jpg" class="responsive-img" alt="BurpSuite插件编写">
+                            
+                            <span class="card-title">BurpSuite插件编写</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            Shiro,Fastjson,Jackson,Thinkphp,越权
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/BurpSuite插件编写/" class="post-category" target="_blank">
+                                    BurpSuite插件编写
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/57827.html" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="http://pic.charo.xyz/blog/31.jpg" class="responsive-img" alt="打靶AdmX_new">
+                            
+                            <span class="card-title">打靶AdmX_new</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            取得root权限和2个flag
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/靶机：AdmX-new/" class="post-category" target="_blank">
+                                    靶机：AdmX_new
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/31336.html" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="http://pic.charo.xyz/blog/12.jpg" class="responsive-img" alt="简单靶机">
+                            
+                            <span class="card-title">简单靶机</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            取得root权限+两个flag
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/靶机：Chronosb/" class="post-category" target="_blank">
+                                    靶机：Chronosb
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/8336.html" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="http://pic.charo.xyz/blog/2.jpg" class="responsive-img" alt="中等难度打靶">
+                            
+                            <span class="card-title">中等难度打靶</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            提权
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/靶机：medium-socnetb/" class="post-category" target="_blank">
+                                    靶机：medium_socnetb
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/21875.html" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="http://pic.charo.xyz/blog/36.jpg" class="responsive-img" alt="一次简单的打靶">
+                            
+                            <span class="card-title">一次简单的打靶</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            提权
                             
                         </div>
                         <div class="publish-info">
@@ -588,21 +1056,36 @@ $(function () {
                             </span>
                             <span class="publish-author">
                                 
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/靶机：easy-cloudantivirus/" class="post-category" target="_blank">
+                                    靶机：easy_cloudantivirus
+                                </a>
+                                
+                                
                             </span>
                         </div>
                     </div>
 
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/xifandanta.github.io/2021/09/21/slh/" target="_blank">
+                    <a href="/posts/51778.html" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="First blog post">
+                            <img src="http://pic.charo.xyz/blog/13.jpg" class="responsive-img" alt="First blog post">
                             
                             <span class="card-title">First blog post</span>
                         </div>
@@ -611,11 +1094,7 @@ $(function () {
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                            
-This is just a readme file
-
-When？2021 2:05 am September 21,  Mid Autumn Festival
-Why？在渗透打靶过程中意识到自己有很多的不足，于是将自己打靶的过程，当时的
+                            一个简单的自述
                             
                         </div>
                         <div class="publish-info">
@@ -626,7 +1105,7 @@ Why？在渗透打靶过程中意识到自己有很多的不足，于是将自�
                                 
                                 <i class="fa fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/xifandanta.github.io/categories/the-first-blog/" class="post-category" target="_blank">
+                                <a href="/categories/the-first-blog/" class="post-category" target="_blank">
                                     the first blog
                                 </a>
                                 
@@ -638,7 +1117,7 @@ Why？在渗透打靶过程中意识到自己有很多的不足，于是将自�
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/xifandanta.github.io/tags/博客/" target="_blank">
+                        <a href="/tags/博客/" target="_blank">
                             <span class="chip bg-color">博客</span>
                         </a>
                         
@@ -661,7 +1140,7 @@ Why？在渗透打靶过程中意识到自己有很多的不足，于是将自�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">153</span>
+            <span class="white-color">14.3k</span>
             
 
             <br>
@@ -714,7 +1193,7 @@ Why？在渗透打靶过程中意识到自己有很多的不足，于是将自�
 
 
 
-    <a href="/xifandanta.github.io/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -797,7 +1276,7 @@ Why？在渗透打靶过程中意识到自己有很多的不足，于是将自�
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/xifandanta.github.io/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->

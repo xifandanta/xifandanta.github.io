@@ -3,10 +3,10 @@
   <title>pluto 小站</title>
   
   <subtitle>Charo</subtitle>
-  <link href="/xifandanta.github.io/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="https://charo.xyz/"/>
-  <updated>2021-09-29T09:05:50.880Z</updated>
+  <updated>2021-11-13T04:49:31.309Z</updated>
   <id>https://charo.xyz/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="https://charo.xyz/2021/09/29/test/"/>
-    <id>https://charo.xyz/2021/09/29/test/</id>
-    <published>2021-09-29T05:46:52.000Z</published>
-    <updated>2021-09-29T09:05:50.880Z</updated>
+    <title>Shiro漏洞复现</title>
+    <link href="https://charo.xyz/posts/51574.html"/>
+    <id>https://charo.xyz/posts/51574.html</id>
+    <published>2021-10-16T06:08:02.000Z</published>
+    <updated>2021-11-13T04:49:31.309Z</updated>
     
     <summary type="html">
     
@@ -29,22 +29,194 @@
       
         
         
-          &lt;p&gt;#this is a test&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://r02y8mxs0.hb-bkt.clouddn.com/blog/202109291703689.jpg&quot;
+          &lt;blockquote&gt;
+&lt;p&gt;前面那篇博客介绍了这几个漏洞如何发现，接下来这几篇博客将对这几个漏洞进行复现，包括新增加的一些漏洞版本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Shiro-rememberMe反序列化漏洞（Shiro-550）&quot;&gt;&lt;a
         
       
     
     </summary>
     
+      <category term="靶场：Vulhub-Shiro" scheme="https://charo.xyz/categories/%E9%9D%B6%E5%9C%BA%EF%BC%9AVulhub-Shiro/"/>
+    
+    
+      <category term="博客" scheme="https://charo.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xss自动化攻击</title>
+    <link href="https://charo.xyz/posts/34407.html"/>
+    <id>https://charo.xyz/posts/34407.html</id>
+    <published>2021-10-14T12:44:17.000Z</published>
+    <updated>2021-11-13T04:49:31.309Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;一个简单的xss自动攻击扫描器&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;payload&quot;&gt;&lt;a href=&quot;#payload&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Burp插件---xss自动化攻击" scheme="https://charo.xyz/categories/Burp%E6%8F%92%E4%BB%B6-xss%E8%87%AA%E5%8A%A8%E5%8C%96%E6%94%BB%E5%87%BB/"/>
+    
+    
+      <category term="博客" scheme="https://charo.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BurpSuite插件编写</title>
+    <link href="https://charo.xyz/posts/44963.html"/>
+    <id>https://charo.xyz/posts/44963.html</id>
+    <published>2021-10-14T04:51:04.000Z</published>
+    <updated>2021-11-13T04:49:31.309Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;这是我去年写的插件和记录，今天翻文件夹的时候找出来了，里面的内容可能有些过时，有些图是新配的，如果写的有些不到位，大佬轻喷。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="BurpSuite插件编写" scheme="https://charo.xyz/categories/BurpSuite%E6%8F%92%E4%BB%B6%E7%BC%96%E5%86%99/"/>
+    
+    
+      <category term="博客" scheme="https://charo.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打靶AdmX_new</title>
+    <link href="https://charo.xyz/posts/57827.html"/>
+    <id>https://charo.xyz/posts/57827.html</id>
+    <published>2021-10-10T06:20:53.000Z</published>
+    <updated>2021-11-13T04:49:31.309Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;靶机地址：&lt;a href=&quot;https://download.vulnhub.com/admx/AdmX_new.7z&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="靶机：AdmX_new" scheme="https://charo.xyz/categories/%E9%9D%B6%E6%9C%BA%EF%BC%9AAdmX-new/"/>
+    
+    
+      <category term="博客" scheme="https://charo.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单靶机</title>
+    <link href="https://charo.xyz/posts/31336.html"/>
+    <id>https://charo.xyz/posts/31336.html</id>
+    <published>2021-10-02T14:28:53.000Z</published>
+    <updated>2021-11-13T04:49:31.309Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;靶机地址：&lt;a href=&quot;https://www.vulnhub.com/entry/chronos-1,735/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="靶机：Chronosb" scheme="https://charo.xyz/categories/%E9%9D%B6%E6%9C%BA%EF%BC%9AChronosb/"/>
+    
+    
+      <category term="博客" scheme="https://charo.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中等难度打靶</title>
+    <link href="https://charo.xyz/posts/8336.html"/>
+    <id>https://charo.xyz/posts/8336.html</id>
+    <published>2021-10-01T05:22:54.000Z</published>
+    <updated>2021-11-13T04:49:31.309Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;靶机地址：&lt;a href=&quot;http://www.vulnhub.com/entry/boredhackerblog-social-network,454/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="靶机：medium_socnetb" scheme="https://charo.xyz/categories/%E9%9D%B6%E6%9C%BA%EF%BC%9Amedium-socnetb/"/>
+    
+    
+      <category term="博客" scheme="https://charo.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一次简单的打靶</title>
+    <link href="https://charo.xyz/posts/21875.html"/>
+    <id>https://charo.xyz/posts/21875.html</id>
+    <published>2021-09-29T05:46:52.000Z</published>
+    <updated>2021-11-13T04:49:31.309Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;靶机地址：&lt;a href=&quot;https://www.vulnhub.com/entry/boredhackerblog-cloud-av,453/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="靶机：easy_cloudantivirus" scheme="https://charo.xyz/categories/%E9%9D%B6%E6%9C%BA%EF%BC%9Aeasy-cloudantivirus/"/>
+    
+    
+      <category term="博客" scheme="https://charo.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>First blog post</title>
-    <link href="https://charo.xyz/2021/09/21/slh/"/>
-    <id>https://charo.xyz/2021/09/21/slh/</id>
+    <link href="https://charo.xyz/posts/51778.html"/>
+    <id>https://charo.xyz/posts/51778.html</id>
     <published>2021-09-20T18:05:31.000Z</published>
-    <updated>2021-10-02T18:07:16.482Z</updated>
+    <updated>2021-11-13T04:49:31.309Z</updated>
     
     <summary type="html">
     
